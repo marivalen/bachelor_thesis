@@ -101,7 +101,7 @@ The crystal structures of \db and  \kb complexes are found in the Protein Data B
 The simulations for both allotypes were performed using two different conditions. 
 In one condition the complex was bound to the peptide, and in the other  the complex is in the absence of the peptide. 
 Each of these two conditions were simulated using two different initial velocities $v0$ and $v1$ respectively. The two velocities were XXX and YYY. 
-All the simulations are 40 ns long and were performed  at 300 K. These eight simulation are listed in Table \ref{simulations}.
+All the simulations are \SI{40}{\nano\second} long and were performed  at \SI{300}{\kelvin}. These eight simulation are listed in Table \ref{simulations}.
 
 
 \begin{table}[H]
@@ -249,7 +249,7 @@ All the eight simulations in Table \ref{simulations} were loaded into VMD. The i
 The selected pairs were recorded in a residue pair file in the format described in the material and methods section. Then using the 
 Tcl scripting interface, the residue pair file was fed into the code in Listing \ref{Tcl.script} which generated distance files. Every time, two distance files with different conditions (Table \ref{simulations}) were processed by the code in Listing \ref{generategnuplot.sh}. Here we determined the percentage of interactions between the two residues which were less than or equal to four \angstr. The output of the last script  was visually inspected as a graph, generated with \texttt{gnuplot} (Figure \ref{graphdemonstration}).
 
-The graph displays the distance that a residue pair maintained at a particular frame of the simulation. All of the simulations used in the analysis were 10 ns long, which translate into 10000 frames (Figure \ref{graphdemonstration}). The distance between the residue pair, in each condition, fluctuated throughout the simulation. In this case, the interactions between the residues of the pair fluctuated between 3.5 \angstr and  17 \angstr for the chosen condition of with peptide and initial veolocity of v0. The pair was also analysed in the conditions without (wo) peptide and an initial velocity of v0. Under those condition the interactions between the residues of  fluctuated between 3.5 \angstr and  7 \angstr.
+The graph displays the distance that a residue pair maintained at a particular frame of the simulation. All of the simulations used in the analysis were \SI{10}{\nano\second} long, which translate into 10000 frames (Figure \ref{graphdemonstration}). The distance between the residue pair, in each condition, fluctuated throughout the simulation. In this case, the interactions between the residues of the pair fluctuated between 3.5 \angstr and  17 \angstr for the chosen condition of with peptide and initial veolocity of v0. The pair was also analysed in the conditions without (wo) peptide and an initial velocity of v0. Under those condition the interactions between the residues of  fluctuated between 3.5 \angstr and  7 \angstr.
 The percentage from the total set of interactions, which are below the established rage of four \angstr, can be seen on the top right corner of the graph. 
 
 Graphs in which a residue pair had at least 40\% of its total interactions, in any of the two conditions used to analyse it, below four \angstr were considered significant. The information about the percentage was read out from each graph and recorded (Table \ref{KBinteractions} and Table \ref{DBinteractions}). Only the results from the graphs with the condition of initial velocity v0 will be dealt with in the rest of the paper.
