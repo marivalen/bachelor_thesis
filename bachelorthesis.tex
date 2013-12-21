@@ -22,7 +22,7 @@
 %\setcounter{page}{1} use after the title page so that the numbering begins in the next page 
 %\rightarrow this makes arrows that point towards the right 
 \usepackage{enumitem}
-\usepackage{upgreek}
+\usepackage{textgreek}
 \usepackage{multirow}
 \usepackage{minted}
 \usepackage{caption}
@@ -30,6 +30,7 @@
 \newcommand{\db}{H-2D$^{b}$}
 \newcommand{\kb}{H-2K$^{b}$}
 \newcommand{\4}{four {\AA}ngstroms}
+\newcommand{\btm}{\textbeta$_{2}$m}
 
 
 \title{Comparative molecular dynamics simulations study of Beta-2 microglobulin interactions with two MHC class I murine alleles}
@@ -45,9 +46,9 @@ Abualrous
         \begin{abstract}
         
 The function of major histocompatibility complex (MHC) class I  molecules  is to sample peptides derived from the cytosol of the cell and to present them to CD8+ cytotoxic T lymphocytes. 
-Interactions between MHC class I heavy chains and beta2-microglobulin ($\beta_{2}$m) play a critical role in the stability of MHC class I on the cell surface. In this study Molecular Dynamics (MD) simulations were used to investigate the impact that $\beta_{2}$m has on the structure of MHC class I for \db and \kb, in a peptide bound and a peptide unbound state. Molecular dynamics (MD)
+Interactions between MHC class I heavy chains and beta2-microglobulin (\btm) play a critical role in the stability of MHC class I on the cell surface. In this study Molecular Dynamics (MD) simulations were used to investigate the impact that \btm has on the structure of MHC class I for \db and \kb, in a peptide bound and a peptide unbound state. Molecular dynamics (MD)
 simulations complement in vitro experimental studies, since they act as a bridge between theory and experiment by providing possible solutions which might support experimental data. 
-The analysis of the MD simulations might indicate that, when both complexes are in the peptide bound state,  $\beta_{2}$m binds to the heavy chain of both allotypes with the same affinity. While, in the peptide unbound state the complex of $\beta_{2}$m with heavy chain for \kb appears to be more stable than that of \db
+The analysis of the MD simulations might indicate that, when both complexes are in the peptide bound state,  \btm binds to the heavy chain of both allotypes with the same affinity. While, in the peptide unbound state the complex of \btm with heavy chain for \kb appears to be more stable than that of \db
     \end{abstract}
   \end{@twocolumnfalse}
   ]
@@ -59,12 +60,12 @@ MHC class I plays an essential role in the recognition of pathogen infected cell
 The different loci that make up the MHC class I, are called the H-2D, H-2K and H-2L and the alleles are  
 designated by a superscript letter (\db). MHC class I molecule is a highly polygenic protein, which consists 
 of two polypeptide chains~\cite{simone2012analysis}. One chain is the alpha  superdomain, also known as heavy chain, 
-and the other is $\beta_{2}$m. The alpha chain is separated into 3 domains, the alpha 1 and alpha 
+and the other is \btm. The alpha chain is separated into 3 domains, the alpha 1 and alpha 
 2 domains which form the peptide binding groove. The alpha 3 domain has a transmembrane region that serves to anchor 
 the molecule to the cell surface~\cite{pedersen2011porcine}. 
 
 Folding of the MHC class I molecule and peptide loading occur in the endoplasmic reticulum (ER). Upon translocation 
-into the ER, $\beta_{2}$m associates non-covalently with the heavy chain. After association with $\beta_{2}$m the 
+into the ER, \btm associates non-covalently with the heavy chain. After association with \btm the 
 alpha 1 and alpha 2 domains continue to remain in unfolded state until a peptide is loaded into the binding groove. 
 Loading of a peptide into the binding groove takes place with the assistance of several proteins which make the 
 loading complex. Proteins that mediate the intracellular assembly of MHC class I are the chaperones calnexin and 
@@ -76,17 +77,17 @@ Antigen Processing (TAP). After the peptide is incorporated the MHC class I mole
 complex, and is transported out of the ER and unto the cell surface~\cite{lundegaard2012predictions}.
 
 
-The interactions between $\beta_{2}$m and the heavy chain plays a critical role in stabilizing MHC class I heavy chains and facilitating 
-peptide loading. $\beta_{2}$m has been described responsible for promoting MHC class I interactions with a peptide in the ER.
-$\beta_{2}$m does not associate directly with the peptide binding groove but, it has been thought capable of interacting in an indirectly way with the it~\cite{smith1993alteration}.
+The interactions between \btm and the heavy chain plays a critical role in stabilizing MHC class I heavy chains and facilitating 
+peptide loading. \btm has been described responsible for promoting MHC class I interactions with a peptide in the ER.
+\btm does not associate directly with the peptide binding groove but, it has been thought capable of interacting in an indirectly way with the it~\cite{smith1993alteration}.
 
-Even though the function of $\beta_{2}$m in the complex of MHC class I has been studied extensively, it is still not clear through which 
-residues  $\beta_{2}$m might be interacting with the heavy chain. It is also not clear if there is any difference in the stability between $\beta_{2}$m and the heavy chain when they are in the peptide bound condition or peptide unbound condition. MHC class I complexes in the peptide unbound condition cannot be studied through an experimental approach since they do not reach the cell surface unless they are bound to a peptide. Therefore they are studied 
+Even though the function of \btm in the complex of MHC class I has been studied extensively, it is still not clear through which 
+residues  \btm might be interacting with the heavy chain. It is also not clear if there is any difference in the stability between \btm and the heavy chain when they are in the peptide bound condition or peptide unbound condition. MHC class I complexes in the peptide unbound condition cannot be studied through an experimental approach since they do not reach the cell surface unless they are bound to a peptide. Therefore they are studied 
 using MD simulations. In this work I analyzed eight MD simulation, using the molecular graphics software Visual Molecular Dynamics (VMD)~\cite{vmd96}, of the two allotypes, \db and \kb Table \ref{simulations}. 
 
-Pairs of residues, located between $\beta_{2}$m and the heavy chain, which were observed to be making hydrogen bonds for an extended amount of time, were selected and noted into a residue pair file. The residue pair file was used with the code in Listing \ref{Tcl.script}.  Then the  file generated from the previous step was then used with the code in Listing \ref{generategnuplot.sh} to generate distance files. These distance files were then fed into the \texttt{gnuplot} executable to produce graphs Figure \ref{graphdemonstration}. 
+Pairs of residues, located between \btm and the heavy chain, which were observed to be making hydrogen bonds for an extended amount of time, were selected and noted into a residue pair file. The residue pair file was used with the code in Listing \ref{Tcl.script}.  Then the  file generated from the previous step was then used with the code in Listing \ref{generategnuplot.sh} to generate distance files. These distance files were then fed into the \texttt{gnuplot} executable to produce graphs Figure \ref{graphdemonstration}. 
 
-By using the graphs I determined several interactions, within the heavy chain and $\beta_{2}$m of \db and \kb, that are maintained in the condition with peptide and  without peptide. The number of interacting partners stayed constant for \kb under both condition. This was not the case for \db were the number of interacting partners decreased in the condition without peptide. This might indicate that \db is less stable than \kb in the condition without peptide and can be correlated with experiment data which shows that \db is less stable than \kb~\cite{Shields1999561}.
+By using the graphs I determined several interactions, within the heavy chain and \btm of \db and \kb, that are maintained in the condition with peptide and  without peptide. The number of interacting partners stayed constant for \kb under both condition. This was not the case for \db were the number of interacting partners decreased in the condition without peptide. This might indicate that \db is less stable than \kb in the condition without peptide and can be correlated with experiment data which shows that \db is less stable than \kb~\cite{Shields1999561}.
 
 \section*{Material and Methods}
 
@@ -102,7 +103,7 @@ All the simulations are 40 ns long and were performed  at 300 K. These eight sim
 
 
 \begin{table}[H]
-\caption{\textbf{Overview of the eight simulation conditions used for analysis of $\beta_{2}m$ affinity to the heavy chain.} Each of the simulations is displaying either the allotype \db or \kb, it is involved in the complex with peptide (w) or without peptide (wo) and, has the initial velocities of $v0$ or $v1$.}
+\caption{\textbf{Overview of the eight simulation conditions used for analysis of \btm affinity to the heavy chain.} Each of the simulations is displaying either the allotype \db or \kb, it is involved in the complex with peptide (w) or without peptide (wo) and, has the initial velocities of $v0$ or $v1$.}
 \label{simulations}
 \centering 
 \resizebox{0.4\textwidth}{!} {
@@ -242,7 +243,7 @@ The \texttt{gnuplot} instructions generated by the last script can then be fed i
 
 \section*{Results}
 
-All the eight simulations in Table \ref{simulations} were loaded into VMD. The interface between $\beta_{2}$m and the heavy chain was analysed in each simulation. The analysis consisted of observing pairs of residues, between the highlightes areas (Figure \ref{interface}), and selecting those which were candidates to form hydrogen bonds. 
+All the eight simulations in Table \ref{simulations} were loaded into VMD. The interface between \btm and the heavy chain was analysed in each simulation. The analysis consisted of observing pairs of residues, between the highlightes areas (Figure \ref{interface}), and selecting those which were candidates to form hydrogen bonds. 
 The selected pairs were recorded in a residue pair file in the format described in the material and methods section. Then using the 
 Tcl scripting interface, the residue pair file was fed into the code in Listing \ref{Tcl.script} which generated distance files. Every time, two distance files with different conditions (Table \ref{simulations}) were processed by the code in Listing \ref{generategnuplot.sh}. Here we determined the percentage of interactions between the two residues which were less than or equal to four {\AA}ngstroms. The output of the last script  was visually inspected as a graph, generated with \texttt{gnuplot} (Figure \ref{graphdemonstration}).
 
@@ -253,12 +254,12 @@ Graphs in which a residue pair had at least 40\% of its total interactions, in a
 
 
 \begin{table}[H]
-\caption{\textbf{The interacting residues used for the analysis of \kb and the percentage of their interactions below four {\AA}ngstroms. } The percentage of intractions below four {\AA}ngstroms between the residues selected in $\beta_{2}$m and the peptide binding domain of \kb in the conditions of with peptide (w) and without peptide (wo) is listed.}
+\caption{\textbf{The interacting residues used for the analysis of \kb and the percentage of their interactions below four {\AA}ngstroms. } The percentage of intractions below four {\AA}ngstroms between the residues selected in \btm and the peptide binding domain of \kb in the conditions of with peptide (w) and without peptide (wo) is listed.}
 \label{KBinteractions}
 \centering 
 \resizebox{\linewidth}{!} {
 \begin{tabular}{|c|c|c|c|}  \hline
-Residue (peptide binding domain) &Residue ($\beta_{2}$m)&\kb{\_}w[\%]&\kb{\_}wo[\%]\\ \hline
+Residue (peptide binding domain) &Residue (\btm)&\kb{\_}w[\%]&\kb{\_}wo[\%]\\ \hline
 119&31&69&69\\ \hline
 119&1&98&99\\ \hline
 122&60&50&43\\ \hline
@@ -270,23 +271,23 @@ Residue (peptide binding domain) &Residue ($\beta_{2}$m)&\kb{\_}w[\%]&\kb{\_}wo[
 }
 \end{table}
 
-In this analysis only seven residue pair interactions, above the 40\% criteria, were found in \kb for the conditions of with peptide  and without peptide. Most of the residue pair interactions maintain the same percentage, in  the conditions with and without peptide, in  \kb. An exception is the interaction between  residue 122 in the peptide binding complex with residue 60 in $\beta_{2}$m which present 50\% and 40\% of their total interations under \4 in the conditions with and without peptide respectively. Other two exceptions correspond to the interactions between the residue 92  in the peptide binding complex with residue 85 in $\beta_{2}$m and between the residue 48 in the peptide binding complex with residue 52 in $\beta_{2}$m (Table \ref{KBinteractions}). In general, the percentage of the interactions below \4 is less in the case of \kb without peptide than in the case of \kb with peptide.  
+In this analysis only seven residue pair interactions, above the 40\% criteria, were found in \kb for the conditions of with peptide  and without peptide. Most of the residue pair interactions maintain the same percentage, in  the conditions with and without peptide, in  \kb. An exception is the interaction between  residue 122 in the peptide binding complex with residue 60 in \btm which present 50\% and 40\% of their total interations under \4 in the conditions with and without peptide respectively. Other two exceptions correspond to the interactions between the residue 92  in the peptide binding complex with residue 85 in \btm and between the residue 48 in the peptide binding complex with residue 52 in \btm (Table \ref{KBinteractions}). In general, the percentage of the interactions below \4 is less in the case of \kb without peptide than in the case of \kb with peptide.  
 
 
 
 
 In the case of \db nine residue pair interactions, above the 40\% criteria, were found for the conditions of with peptide and without peptide (Table \ref{DBinteractions}). Most of the residue pairs in \db have a very large difference between the percentage of interactions, under \4,  in the condition with peptide and the percentage of interaction, under \4, in the condition without peptide.    
-The only two exceptions correspond to the residues 27 in $\beta_{2}$m with 63 in the peptide binding groove and 27 in $\beta_{2}$m with 55 in the peptide binding groove. The percentage of the interactions below \4 is less in the case of \db without peptide than in the case of \db with peptide. The exceptions are the residue pairs 94 with 31 and 122 with 60 which have, in the condition without peptide, more interactions above \4 than in the condition with peptide.  
+The only two exceptions correspond to the residues 27 in \btm with 63 in the peptide binding groove and 27 in \btm with 55 in the peptide binding groove. The percentage of the interactions below \4 is less in the case of \db without peptide than in the case of \db with peptide. The exceptions are the residue pairs 94 with 31 and 122 with 60 which have, in the condition without peptide, more interactions above \4 than in the condition with peptide.  
  
  
  
 \begin{table}[H]
-\caption{\textbf{The interacting residues used for the analysis of \db and the percentage of their interactions below four {\AA}ngstroms. } The percentage of intractions below four {\AA}ngstroms between the residues selected in $\beta_{2}$m and the peptide binding domain of \db in the conditions of with peptide (w) and without peptide (wo) is listed.}
+\caption{\textbf{The interacting residues used for the analysis of \db and the percentage of their interactions below four {\AA}ngstroms. } The percentage of intractions below four {\AA}ngstroms between the residues selected in \btm and the peptide binding domain of \db in the conditions of with peptide (w) and without peptide (wo) is listed.}
 \label{DBinteractions}
 \centering 
 \resizebox{\linewidth}{!} {
 \begin{tabular}{|c|c|c|c|}  \hline
-Residue (peptide binding domain)&Residue ($\beta_{2}$m)&\db{\_}w[\%]&\db{\_}wo[\%]\\ \hline
+Residue (peptide binding domain)&Residue (\btm)&\db{\_}w[\%]&\db{\_}wo[\%]\\ \hline
 14&85&82&4\\ \hline
 14&34&41&19\\ \hline
 122&60&16&58\\ \hline
@@ -308,12 +309,12 @@ All the residue pairs that were found interacting in either \db or \kb were merg
 
 
 \begin{table*}
-\caption{\textbf{ Compilation of the the interacting residues used for the analysis of \kb and \db, and the percentage of interactions bellow below four {\AA}ngstroms, of each analysed condition.} The residues interacting coming from the peptide binding domain, the residues interacting coming from $\beta_{2}$m and the percentage of their interaction which is below \4 is analysed in \db and \kb for the condition of with peptide and without peptide}
+\caption{\textbf{ Compilation of the the interacting residues used for the analysis of \kb and \db, and the percentage of interactions bellow below four {\AA}ngstroms, of each analysed condition.} The residues interacting coming from the peptide binding domain, the residues interacting coming from \btm and the percentage of their interaction which is below \4 is analysed in \db and \kb for the condition of with peptide and without peptide}
 \label{KBDBinteractions}
 \centering 
 \resizebox{0.8\textwidth}{!} {
 \begin{tabular}{|c|c|c|c|c|c|}  \hline
-Residue (peptide binding domain)&Residue ($\beta_{2}$m)&\kb{\_}w[\%]&\kb{\_}wo[\%]&\db{\_}w[\%]&\db{\_}wo[\%]\\ \hline
+Residue (peptide binding domain)&Residue (\btm)&\kb{\_}w[\%]&\kb{\_}wo[\%]&\db{\_}w[\%]&\db{\_}wo[\%]\\ \hline
 14&85&0&10&82&4\\ \hline
 14&34&0&3&41&19\\ \hline
 119&31&69&69&53&21\\ \hline
@@ -334,7 +335,7 @@ Residue (peptide binding domain)&Residue ($\beta_{2}$m)&\kb{\_}w[\%]&\kb{\_}wo[\
 
 \begin{figure}
 \includegraphics[width=0.4\textwidth]{interfaceb2mhc.png}
-\caption{\textbf{MHC class I \kb in the condition without peptide.} Side view of the interactions between $\beta_{2}$m and the heavy chain of \kb obtained during the MD simulations. The section from which residues were selected for analysis in $\beta_{2}$m appears in blue. The section from which residues were selected for analysis in the heavy chain appears in red.}
+\caption{\textbf{MHC class I \kb in the condition without peptide.} Side view of the interactions between \btm and the heavy chain of \kb obtained during the MD simulations. The section from which residues were selected for analysis in \btm appears in blue. The section from which residues were selected for analysis in the heavy chain appears in red.}
 \label{interface}
 \end{figure}
 
