@@ -30,7 +30,11 @@
 \usepackage{fixltx2e} % for \textsubscript
 \def\plus{\texttt{+}}
 \newcommand{\db}{H-2D\textsuperscript{b}\xspace}
+\newcommand{\dbw}{H-2D\textsuperscript{b}\_w\xspace}
+\newcommand{\dbwo}{H-2D\textsuperscript{b}\_wo\xspace}
 \newcommand{\kb}{H-2K\textsuperscript{b}\xspace}
+\newcommand{\kbw}{H-2K\textsuperscript{b}\_w\xspace}
+\newcommand{\kbwo}{H-2K\textsuperscript{b}\_wo\xspace}
 \newcommand{\angstr}{{\AA}ngstroms\xspace}
 \newcommand{\btm}{\textbeta\textsubscript{2}m\xspace}
 
@@ -259,7 +263,7 @@ Graphs in which a residue pair had at least 40\% of its total interactions, in a
 \caption{\textbf{The interacting residues used for the analysis of \kb and the percentage of their interactions below four \angstr. } The percentage of intractions below four \angstr between the residues selected in \btm and the peptide binding domain of \kb in the conditions of with peptide (w) and without peptide (wo) is listed.}
 \label{KBinteractions}
 \begin{tabularx}{\linewidth}{|X|X|X|X|}  \hline
-Residue (peptide binding domain) &Residue (\btm)&\kb{\_}w[\%]&\kb{\_}wo[\%]\\ \hline
+Residue (peptide binding domain) &Residue (\btm)&\kbw [\%]&\kbwo [\%]\\ \hline
 119&31&69&69\\ \hline
 119&1&98&99\\ \hline
 122&60&50&43\\ \hline
@@ -284,7 +288,7 @@ The only two exceptions correspond to the residues 27 in \btm with 63 in the pep
 \caption{\textbf{The interacting residues used for the analysis of \db and the percentage of their interactions below four \angstr. } The percentage of intractions below four \angstr between the residues selected in \btm and the peptide binding domain of \db in the conditions of with peptide (w) and without peptide (wo) is listed.}
 \label{DBinteractions}
 \begin{tabularx}{\linewidth}{|X|X|X|X|}  \hline
-Residue (peptide binding domain)&Residue (\btm)&\db{\_}w[\%]&\db{\_}wo[\%]\\ \hline
+Residue (peptide binding domain)&Residue (\btm)&\dbw [\%]&\dbwo [\%]\\ \hline
 14&85&82&4\\ \hline
 14&34&41&19\\ \hline
 122&60&16&58\\ \hline
@@ -308,7 +312,7 @@ All the residue pairs that were found interacting in either \db or \kb were merg
 \caption{\textbf{ Compilation of the the interacting residues used for the analysis of \kb and \db, and the percentage of interactions bellow below four \angstr, of each analysed condition.} The residues interacting coming from the peptide binding domain, the residues interacting coming from \btm and the percentage of their interaction which is below four \angstr is analysed in \db and \kb for the condition of with peptide and without peptide}
 \label{KBDBinteractions}
 \begin{tabularx}{\linewidth}{|X|X|X|X|X|X|}  \hline
-Residue (peptide binding domain)&Residue (\btm)&\kb{\_}w[\%]&\kb{\_}wo[\%]&\db{\_}w[\%]&\db{\_}wo[\%]\\ \hline
+Residue (peptide binding domain)&Residue (\btm)&\kbw [\%]&\kbwo [\%]&\dbw [\%]&\dbwo [\%]\\ \hline
 14&85&0&10&82&4\\ \hline
 14&34&0&3&41&19\\ \hline
 119&31&69&69&53&21\\ \hline
