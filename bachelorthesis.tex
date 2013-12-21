@@ -1,0 +1,381 @@
+\documentclass[11pt,twocolumn]{article}
+\usepackage{amsmath}        % formulas
+\usepackage{tabularx}       % equally spaced columns
+\usepackage{graphicx}       % include graphics
+\usepackage{float}          % for H placement
+\usepackage[english]{babel} % language specific formatting
+\usepackage{threeparttable} % tablenotes
+\usepackage[hyphens]{url}       % urls
+\usepackage[font=footnotesize,labelfont=bf,justification=raggedright,singlelinecheck=false]{caption}
+\usepackage{subfig}
+\parskip 12pt
+\usepackage{pdfpages}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc} % more characters
+\usepackage{siunitx} %\SI{10}{\micro\meter}
+\usepackage{textcomp} %\textgreater 
+\DeclareSIUnit{\molar}{M}
+\DeclareSIUnit{\mili}{m}
+\DeclareSIUnit{\excoe}{L/mol*cm}
+\usepackage{txfonts}
+%\num{1e10} 
+%\setcounter{page}{1} use after the title page so that the numbering begins in the next page 
+%\rightarrow this makes arrows that point towards the right 
+\usepackage{enumitem}
+\usepackage{upgreek}
+\usepackage{multirow}
+\usepackage{minted}
+\usepackage{caption}
+\def\plus{\texttt{+}}
+\newcommand{\db}{H-2D$^{b}$}
+\newcommand{\kb}{H-2K$^{b}$}
+\newcommand{\4}{four {\AA}ngstroms}
+
+
+\title{Comparative molecular dynamics simulations study of Beta-2 microglobulin interactions with two MHC class I murine alleles}
+\author{Maria Valentina Marin \\ Guided Research performed in the laboratory of Prof. Dr. Sebastian Springer \\ under supervision of  Esam 
+Abualrous
+       }
+        
+\begin{document}
+
+\twocolumn[
+  \begin{@twocolumnfalse}
+  \maketitle
+        \begin{abstract}
+        
+The function of major histocompatibility complex (MHC) class I  molecules  is to sample peptides derived from the cytosol of the cell and to present them to CD8+ cytotoxic T lymphocytes. 
+Interactions between MHC class I heavy chains and beta2-microglobulin ($\beta_{2}$m) play a critical role in the stability of MHC class I on the cell surface. In this study Molecular Dynamics (MD) simulations were used to investigate the impact that $\beta_{2}$m has on the structure of MHC class I for H-2D$^{b}$ and H-2K$^{b}$, in a peptide bound and a peptide unbound state. Molecular dynamics (MD)
+simulations complement in vitro experimental studies, since they act as a bridge between theory and experiment by providing possible solutions which might support experimental data. 
+The analysis of the MD simulations might indicate that, when both complexes are in the peptide bound state,  $\beta_{2}$m binds to the heavy chain of both allotypes with the same affinity. While, in the peptide unbound state the complex of $\beta_{2}$m with heavy chain for H-2K$^{b}$ appears to be more stable than that of H-2D$^{b}$
+    \end{abstract}
+  \end{@twocolumnfalse}
+  ]
+
+
+\section*{Introduction}
+
+MHC class I plays an essential role in the recognition of pathogen infected cells by presenting antigenic peptides on the cell surface to CD8+ T-cells. The MHC class I genes are located in chromosome 17 in mice.
+The different loci that make up the MHC class I, are called the H-2D, H-2K and H-2L and the alleles are  
+designated by a superscript letter (H-2D$^{b}$). MHC class I molecule is a highly polygenic protein, which consists 
+of two polypeptide chains~\cite{simone2012analysis}. One chain is the alpha  superdomain, also known as heavy chain, 
+and the other is $\beta_{2}$m. The alpha chain is separated into 3 domains, the alpha 1 and alpha 
+2 domains which form the peptide binding groove. The alpha 3 domain has a transmembrane region that serves to anchor 
+the molecule to the cell surface~\cite{pedersen2011porcine}. 
+
+Folding of the MHC class I molecule and peptide loading occur in the endoplasmic reticulum (ER). Upon translocation 
+into the ER, $\beta_{2}$m associates non-covalently with the heavy chain. After association with $\beta_{2}$m the 
+alpha 1 and alpha 2 domains continue to remain in unfolded state until a peptide is loaded into the binding groove. 
+Loading of a peptide into the binding groove takes place with the assistance of several proteins which make the 
+loading complex. Proteins that mediate the intracellular assembly of MHC class I are the chaperones calnexin and 
+calreticulin, ERp57, tapasin and Bap31~\cite{zhang2006assembly}. Only peptides which are between 8 and 10 amino acids 
+long, and have proper anchor residues will bind to the binding groove. This event will then induce folding of the 
+alpha 1 and alpha 2 domains~\cite{simone2012analysis}. The peptides which bind to MHC class I are produced in the 
+cytosol of the cell by the protesome, they are then transported into the ER by the Transporter associated with 
+Antigen Processing (TAP). After the peptide is incorporated the MHC class I molecule is released from the loading 
+complex, and is transported out of the ER and unto the cell surface~\cite{lundegaard2012predictions}.
+
+
+The interactions between $\beta_{2}$m and the heavy chain plays a critical role in stabilizing MHC class I heavy chains and facilitating 
+peptide loading. $\beta_{2}$m has been described responsible for promoting MHC class I interactions with a peptide in the ER.
+$\beta_{2}$m does not associate directly with the peptide binding groove but, it has been thought capable of interacting in an indirectly way with the it~\cite{smith1993alteration}.
+
+Even though the function of $\beta_{2}$m in the complex of MHC class I has been studied extensively, it is still not clear through which 
+residues  $\beta_{2}$m might be interacting with the heavy chain. It is also not clear if there is any difference in the stability between $\beta_{2}$m and the heavy chain when they are in the peptide bound condition or peptide unbound condition. MHC class I complexes in the peptide unbound condition cannot be studied through an experimental approach since they do not reach the cell surface unless they are bound to a peptide. Therefore they are studied 
+using MD simulations. In this work I analyzed eight MD simulation, using the molecular graphics software Visual Molecular Dynamics (VMD)~\cite{vmd96}, of the two allotypes, H-2D$^{b}$ and H-2K$^{b}$ Table \ref{simulations}. 
+
+Pairs of residues, located between $\beta_{2}$m and the heavy chain, which were observed to be making hydrogen bonds for an extended amount of time, were selected and noted into a residue pair file. The residue pair file was used with the code in Listing \ref{Tcl.script}.  Then the  file generated from the previous step was then used with the code in Listing \ref{generategnuplot.sh} to generate distance files. These distance files were then fed into the \texttt{gnuplot} executable to produce graphs Figure \ref{graphdemonstration}. 
+
+By using the graphs I determined several interactions, within the heavy chain and $\beta_{2}$m of H-2D$^{b}$ and H-2K$^{b}$, that are maintained in the condition with peptide and  without peptide. The number of interacting partners stayed constant for H-2K$^{b}$ under both condition. This was not the case for H-2D$^{b}$ were the number of interacting partners decreased in the condition without peptide. This might indicate that H-2D$^{b}$ is less stable than H-2K$^{b}$ in the condition without peptide and can be correlated with experiment data which shows that H-2D$^{b}$ is less stable than H-2K$^{b}$~\cite{Shields1999561}.
+
+\section*{Material and Methods}
+
+\subsection*{Molecular dynamic simulations}
+
+Eight free energy MD simulations were  performed by my supervisor using the sander module of Amber 9.0~\cite{case2005amber} and the parm03 forcefield.
+These simulation were executed on the  MHC/peptide complexes corresponding to  H-2D$^{b}$ and  H-2K$^{b}$. 
+The crystal structures of H-2D$^{b}$ and  H-2K$^{b}$ complexes are found in the Protein Data Bank (PDB) under the label of 1S7V and  1S7R respectively. 
+The simulations for both allotypes were performed using two different conditions. 
+In one condition the complex was bound to the peptide, and in the other  the complex is in the absence of the peptide. 
+Each of these two conditions were simulated using two different initial velocities $v0$ and $v1$ respectively. The two velocities were XXX and YYY. 
+All the simulations are 40 ns long and were performed  at 300 K. These eight simulation are listed in Table \ref{simulations}.
+
+
+\begin{table}[H]
+\caption{\textbf{Overview of the eight simulation conditions used for analysis of $\beta_{2}m$ affinity to the heavy chain.} Each of the simulations is displaying either the allotype H-2D$^{b}$ or H-2K$^{b}$, it is involved in the complex with peptide (w) or without peptide (wo) and, has the initial velocities of $v0$ or $v1$.}
+\label{simulations}
+\centering 
+\resizebox{0.4\textwidth}{!} {
+\begin{tabular}{|c|c|c|c|}  \hline
+MHC class I allotype& w/wo peptide&initial velocity\\ \hline
+H-2D$^{b}$&\multirow{2}{*}{w}&$v0$\\
+&&$v1$\\  \hline
+H-2D$^{b}$&\multirow{2}{*}{wo}&$v0$\\
+&&$v1$\\  \hline
+H-2K$^{b}$&\multirow{2}{*}{w}&$v0$\\
+&&$v1$\\  \hline
+H-2K$^{b}$&\multirow{2}{*}{wo}&$v0$\\
+&&$v1$\\  \hline
+
+\end{tabular}
+}
+\end{table}
+
+\subsection*{MD simulation analysis}
+
+The data acquisition, evaluation, and visualization was automated by two scripts. They will be explained in the following  sections.
+
+\subsubsection*{Data Acquisition}
+
+The data acquisition from  the simulation results was performed using VMD and its Tcl scripting interface. The process of generating the distance between two given residues per frame was automated using the code in Listing \ref{Tcl.script}.
+
+\begin{listing}
+\begin{minted}[linenos,fontsize=\scriptsize,numbersep=2pt,frame=lines,framesep=2mm]{tcl}
+proc t_loadlist {filename} {
+ array set visited {}
+ set fp [open $filename]
+ label delete Bonds all
+ while {-1 != [gets $fp line]} {
+  lassign [split $line] res1 at1 res2 at2
+  set sel1 [atomselect top "resid $res1 and name $at1"]
+  set sel2 [atomselect top "resid $res2 and name $at2"]
+  set index1 [$sel1 get index]
+  if {$index1 eq ""} {
+   puts stderr "no index for $res1 and $at1"
+   continue
+  }
+  set resn1 [$sel1 get resname]
+  set index2 [$sel2 get index]
+  if {$index2 eq ""} {
+   puts stderr "no index for $res2 and $at2"
+   continue
+  }
+  if [expr {[info exists visited($index1$index2)]
+         || [info exists visited($index2$index1)]}] {
+   puts stderr "$index1 and $index2 already exist"
+   continue
+  }
+  array set visited {$index1$index2 {}}
+  set resn2 [$sel2 get resname]
+  set filename "${resn1}_${res1}_${at1}_${resn2}"
+  set filename "${filename}_${res2}_${at2}.dat"
+  if [catch {label add Bonds 0/$index1 0/$index2}] {
+   puts stderr "cannot add label for $index1 $index2"
+   continue
+  }
+  set labelnum [expr [llength [label list Bonds]] - 1] 
+  label graph Bonds $labelnum $filename  
+ }
+ close $fp
+}
+\end{minted}
+\caption{\textbf{Tcl script used to generate the data for analysis.}}\label{Tcl.script}
+\end{listing}
+
+The input to the function \texttt{t\_loadlist} is a plain text file where each line specifies a residue pair. Each line contains four values separated by white spaces. The first and the second value specify the residue number and the atom number of the first residue, and the third and the fourth value specify the  residue number and the atom number of the second residue. The residue numbers and the atom numbers are retrieved from the VMD interface. An example for a residue pair file is given in Listing \ref{resatexample}.
+
+\begin{listing}
+\begin{verbatim}
+14 NH2 310 NE2
+14 NH1 361 OD1
+310 NE2 312 OE2
+\end{verbatim}
+\caption{\textbf{Example of residue pair file.} Each line represents one pair.}\label{resatexample}
+\end{listing}
+
+In the beginning (line 4) all previously labeled bonds are deleted to avoid interferance of previous runs of the script.
+The main while loop reads the residue pair file line by line until the end of the file is reached (line 5). The line is parsed into the variables \texttt{res1}, \texttt{at1}, \texttt{res2}, and \texttt{at2} representing residue number and the atom number of each element of the pair, respectively (line 6).
+In the following two lines \texttt{atomselect} evaluates a query which selects the right atom in the structure for the given residue number and the atom number. It returns a function which can retrieve properties of the atom selection, such as \texttt{index} and \texttt{resname} in lines 9, 14, 15, and 26.
+
+The lines from 20-25 check if the current residue pair has already been processed in an earlier iteration. If yes, then the current residue pair is skipped. If not, then the current residue pair is added to the list of visited pairs and processing of the current pair continues.  
+
+Lines 27 and 28 set the filename of the output data. The filename includes the residue name, the residue number and the atom number of each element of the current pair. Given the first line of the residue pair file given in Listing \ref{resatexample} the output filename would be \texttt{ARG\_14\_NH2\_HIE\_310\_NE2.dat}.
+
+The last step in lines 29 to 34 is to utilize the VMD \texttt{label} function. It adds a bond between the two selected atoms and outputs the distances between them, over the total number of simulation frames, into a location specified by the generated filename. The created file is a plain text file consisting of two columns, giving the frame number and the distance between the two selected atoms for that frame number, respectively. These distance files are the imput to the script which will be described next.
+
+The script is executed for all the eight simulation conditions displayed in Table \ref{simulations}. Since each run of the script generates multiple files, they are organized into directories. Each simulation condition corresponds to one directory.
+
+\subsubsection*{Data Evaluation}
+
+The script in Listing \ref{generategnuplot.sh} processes the generated distance files and turns them into gnuplot instructions which are used to vizualise the results.
+
+\begin{listing}
+\begin{minted}[linenos,fontsize=\scriptsize,numbersep=2pt,frame=lines,framesep=2mm]{sh}
+#!/bin/sh
+if [ $# -ne 3 ]; then 
+ echo "usage: $0 dir1 dir2 outputdir" >&2
+ exit 1
+fi
+
+dir1="$1"
+dir2="$2"
+outputdir="$3"
+echo "set terminal png size 1280,768" 
+mkdir -p $outputdir
+
+for f in "$dir1"/*.dat; do
+ g=`basename $f .dat`
+ if [ ! -f "$dir2/$g.dat" ] ; then 
+  continue
+ fi
+ echo "set title \"$g.dat\""
+ i=`awk '{ if($2 <= 4) print $0}' "$f" | wc -l`
+ j=`wc -l "$f"`
+ i=$(((i*100)/j))
+ h=`awk '{ if($2 <= 4) print $0}' "$dir2/$g.dat" | wc -l`
+ k=`wc -l "$dir2/$g.dat"`
+ h=$(((h*100)/k))
+ echo "set output \"$outputdir/$g.png\""
+ echo "plot \"$f\" title '$dir1 ---> $i\%', "\
+      "\"$dir2/$g.dat\" title '$dir2 ---> $h\%'"
+done
+\end{minted}
+\caption{\textbf{Shell script used to generate \texttt{gnuplot} instructions.}}\label{generategnuplot.sh}
+\end{listing}
+
+The script takes three arguments. The first two arguments specify the two directories which contain the generated distance files of two selected conditions that are to be compared, respectively. The third argument specifies the output directory for the comparison results. Line 10 instructs \texttt{gnuplot} to generate bitmap images in Portable Network Graphics (PNG) format. For each file ending in \texttt{.dat} in the first directory, the script checks if it also exists int he second directory (line 15). If not, the file is skipped. If yes, processing continues with setting the output graph tittle to the filename (line 18). Line 19 counts how many lines of the file in the first directory have a value which is less than or equal to four in the second column. Line 20 gets the total number of lines of the same file. The percentage of lines fullfiling the condition in line 19 is calculated in line 21. The subsequent three lines excute the same operations for the file in the second directory. The output filename is generated fromt the current filename in line 25. The last two lines of the loop body instruct \texttt{gnuplot} to plot the graph and annotate it with the two prior calculated percentages.  
+
+\subsubsection*{Data Visualization}
+
+The \texttt{gnuplot} instructions generated by the last script can then be fed into the \texttt{gnuplot} executable which in turn will generate the final images showing the graphs with percentages. An example visualizing the distances between the residues given in the first line of the residue pair file in Listing \ref{resatexample} can be seen in Figure \ref{graphdemonstration}.
+
+
+\section*{Results}
+
+All the eight simulations in Table \ref{simulations} were loaded into VMD. The interface between $\beta_{2}$m and the heavy chain was analysed in each simulation. The analysis consisted of observing pairs of residues, between the highlightes areas (Figure \ref{interface}), and selecting those which were candidates to form hydrogen bonds. 
+The selected pairs were recorded in a residue pair file in the format described in the material and methods section. Then using the 
+Tcl scripting interface, the residue pair file was fed into the code in Listing \ref{Tcl.script} which generated distance files. Every time, two distance files with different conditions (Table \ref{simulations}) were processed by the code in Listing \ref{generategnuplot.sh}. Here we determined the percentage of interactions between the two residues which were less than or equal to four {\AA}ngstroms. The output of the last script  was visually inspected as a graph, generated with \texttt{gnuplot} (Figure \ref{graphdemonstration}).
+
+The graph displays the distance that a residue pair maintained at a particular frame of the simulation. All of the simulations used in the analysis were 10 ns long, which translate into 10000 frames (Figure \ref{graphdemonstration}). The distance between the residue pair, in each condition, fluctuated throughout the simulation. In this case, the interactions between the residues of the pair fluctuated between 3.5 {\AA}ngstroms and  17 {\AA}ngstroms for the chosen condition of with peptide and initial veolocity of v0. The pair was also analysed in the conditions without (wo) peptide and an initial velocity of v0. Under those condition the interactions between the residues of  fluctuated between 3.5 {\AA}ngstroms and  7 {\AA}ngstroms.
+The percentage from the total set of interactions, which are below the established rage of four {\AA}ngstroms, can be seen on the top right corner of the graph. 
+
+Graphs in which a residue pair had at least 40\% of its total interactions, in any of the two conditions used to analyse it, below four {\AA}ngstroms were considered significant. The information about the percentage was read out from each graph and recorded (Table \ref{KBinteractions} and Table \ref{DBinteractions}). Only the results from the graphs with the condition of initial velocity v0 will be dealt with in the rest of the paper.
+
+
+\begin{table}[H]
+\caption{\textbf{The interacting residues used for the analysis of H-2K$^{b}$ and the percentage of their interactions below four {\AA}ngstroms. } The percentage of intractions below four {\AA}ngstroms between the residues selected in $\beta_{2}$m and the peptide binding domain of H-2K$^{b}$ in the conditions of with peptide (w) and without peptide (wo) is listed.}
+\label{KBinteractions}
+\centering 
+\resizebox{\linewidth}{!} {
+\begin{tabular}{|c|c|c|c|}  \hline
+Residue (peptide binding domain) &Residue ($\beta_{2}$m)&H-2K$^{b}${\_}w[\%]&H-2K$^{b}${\_}wo[\%]\\ \hline
+119&31&69&69\\ \hline
+119&1&98&99\\ \hline
+122&60&50&43\\ \hline
+96&31&99&99\\ \hline
+92&85&59&41\\ \hline
+48&52&87&69\\ \hline
+96&60&99&99\\ \hline
+\end{tabular}
+}
+\end{table}
+
+In this analysis only seven residue pair interactions, above the 40\% criteria, were found in H-2K$^{b}$ for the conditions of with peptide  and without peptide. Most of the residue pair interactions maintain the same percentage, in  the conditions with and without peptide, in  \kb. An exception is the interaction between  residue 122 in the peptide binding complex with residue 60 in $\beta_{2}$m which present 50\% and 40\% of their total interations under \4 in the conditions with and without peptide respectively. Other two exceptions correspond to the interactions between the residue 92  in the peptide binding complex with residue 85 in $\beta_{2}$m and between the residue 48 in the peptide binding complex with residue 52 in $\beta_{2}$m (Table \ref{KBinteractions}). In general, the percentage of the interactions below \4 is less in the case of \kb without peptide than in the case of \kb with peptide.  
+
+
+
+
+In the case of \db nine residue pair interactions, above the 40\% criteria, were found for the conditions of with peptide and without peptide (Table \ref{DBinteractions}). Most of the residue pairs in \db have a very large difference between the percentage of interactions, under \4,  in the condition with peptide and the percentage of interaction, under \4, in the condition without peptide.    
+The only two exceptions correspond to the residues 27 in $\beta_{2}$m with 63 in the peptide binding groove and 27 in $\beta_{2}$m with 55 in the peptide binding groove. The percentage of the interactions below \4 is less in the case of \db without peptide than in the case of \db with peptide. The exceptions are the residue pairs 94 with 31 and 122 with 60 which have, in the condition without peptide, more interactions above \4 than in the condition with peptide.  
+ 
+ 
+ 
+\begin{table}[H]
+\caption{\textbf{The interacting residues used for the analysis of H-2D$^{b}$ and the percentage of their interactions below four {\AA}ngstroms. } The percentage of intractions below four {\AA}ngstroms between the residues selected in $\beta_{2}$m and the peptide binding domain of H-2D$^{b}$ in the conditions of with peptide (w) and without peptide (wo) is listed.}
+\label{DBinteractions}
+\centering 
+\resizebox{\linewidth}{!} {
+\begin{tabular}{|c|c|c|c|}  \hline
+Residue (peptide binding domain)&Residue ($\beta_{2}$m)&H-2D$^{b}${\_}w[\%]&H-2D$^{b}${\_}wo[\%]\\ \hline
+14&85&82&4\\ \hline
+14&34&41&19\\ \hline
+122&60&16&58\\ \hline
+119&31&53&21\\ \hline
+94&31&78&91\\ \hline
+27&53&52&0\\ \hline
+27&55&56&52\\ \hline
+27&63&58&54\\ \hline
+119&1&94&40\\ \hline
+\end{tabular}
+}
+\end{table}
+
+
+All the residue pairs that were found interacting in either \db or \kb were merged together for a better comparison between \kb and \db  (Table \ref{KBDBinteractions}). From all the twelve residue pairs, \kb in the condition with peptide, present only six residue pairs which meet the percentage condition explained above. \kb in the condition without peptide also presents only six residue pairs which meet the percentage condition. In contrast, \db in the condition with peptide has eight residue pairs which meet the percentage condition while \db in the condition without peptide only has five residue pairs which meet the percentage condition. 
+
+   
+
+
+
+\begin{table*}
+\caption{\textbf{ Compilation of the the interacting residues used for the analysis of \kb and \db, and the percentage of interactions bellow below four {\AA}ngstroms, of each analysed condition.} The residues interacting coming from the peptide binding domain, the residues interacting coming from $\beta_{2}$m and the percentage of their interaction which is below \4 is analysed in \db and \kb for the condition of with peptide and without peptide}
+\label{KBDBinteractions}
+\centering 
+\resizebox{0.8\textwidth}{!} {
+\begin{tabular}{|c|c|c|c|c|c|}  \hline
+Residue (peptide binding domain)&Residue ($\beta_{2}$m)&H-2K$^{b}${\_}w[\%]&H-2K$^{b}${\_}wo[\%]&H-2D$^{b}${\_}w[\%]&H-2D$^{b}${\_}wo[\%]\\ \hline
+14&85&0&10&82&4\\ \hline
+14&34&0&3&41&19\\ \hline
+119&31&69&69&53&21\\ \hline
+122&60&50&43&16&58\\ \hline
+96&60&99&99&15&2\\ \hline
+119&1&98&99&94&40\\ \hline
+92&85&59&41&7&11\\ \hline
+48&52&87&69&1&5\\ \hline
+94&31&12&12&78&91\\ \hline
+27&53&4&0&52&0\\ \hline
+27&55&6&0&56&52\\ \hline
+27&63&0&0&58&54\\ \hline
+\end{tabular}
+}
+\end{table*}
+
+
+
+\begin{figure}
+\includegraphics[width=0.4\textwidth]{interfaceb2mhc.png}
+\caption{\textbf{MHC class I H-2K$^{b}$ in the condition without peptide.} Side view of the interactions between $\beta_{2}$m and the heavy chain of H-2K$^{b}$ obtained during the MD simulations. The section from which residues were selected for analysis in $\beta_{2}$m appears in blue. The section from which residues were selected for analysis in the heavy chain appears in red.}
+\label{interface}
+\end{figure}
+
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics[scale=0.4]{ARG_14_NH2_HIE_310_NE2.png}
+\caption{\textbf{Example of a graph generated by \texttt{gnuplot} after processing the first line in the residue pair file (Listing \ref{resatexample}) with the two scripts (Listing \ref{Tcl.script} and \ref{generategnuplot.sh}).} The distance between the two interacting atoms for each of the two residue pairs represented in every frame of the simulation as $\plus$ or a $\times$. One pair was analysed in the conditions with peptide and initial velocity of v0. The other pair was analysed in the conditions without peptide and initial velocity of v0. The percentage calculated in Listing \ref{generategnuplot.sh} is displayed in the top right corner and the name of the analysed pair can be seen on the top of the graph. The blue line indicates the 4 {\AA}ngstroms cutoff value.}
+\label{graphdemonstration}
+\end{center}
+\end{figure*}
+
+
+%keepaspectratio
+
+
+\section*{Discussion}
+Everything that can be done using the VMD graphical interface can also be done through the Tcl interface.
+
+computer methods have evolved as an aid to study complex biological systems they have become a bridge between the experiment and  the theory
+
+Four {\AA}ngstroms is the maximun distance for an interaction between two residues to be considered as a hydrogen bond~\cite{McDonald1994777}.
+
+write about what are interrestic interactions 
+
+i want to write why i wrote the script 
+
+why did we not choose v1?
+
+not as hardcoded might be different in another simulation 
+
+what is ahppenening in a articular simulation does not necesarily happen in the next therefore many simulation or a longer run time help to aprroxima to a more real state
+
+we should run other simulations 
+
+It has been shown experimentally that H-2D$^{b}$ is less stable than  H-2K$^{b}$~\cite{Shields1999561}.
+
+\pagebreak
+
+\bibliographystyle{abbrv}
+\bibliography{citations}
+
+\end{document}
