@@ -40,10 +40,13 @@
 
 
 
-\title{Comparative Molecular Dynamics Simulations Study of Beta-2 microglobulin interactions with two MHC class I murine alleles}
-\author{Maria Valentina Marin Rodrigues \\ Guided Research performed in the laboratory of Prof. Dr. Sebastian Springer \\ under supervision of  Esam 
-Abualrous
-       }
+\title{Comparative Molecular Dynamics Simulations Study of Beta-2 microglobulin
+interactions with two MHC class I murine alleles}
+
+\author{Maria Valentina Marin Rodrigues \\ Guided Research performed in the
+laboratory of Prof. Dr. Sebastian Springer \\ under supervision of  Esam
+Abualrous }
+
         
 \begin{document}
 
@@ -52,9 +55,21 @@ Abualrous
   \maketitle
         \begin{abstract}
         
-The function of major the histocompatibility complex (MHC) class I  molecules  is to sample peptides derived from the cytosol of the cell and to present them to CD8+ cytotoxic T lymphocytes. 
-Interactions between the MHC class I heavy chain and beta2-microglobulin (\btm) play a critical role in the stability of MHC class I on the cell surface. In this study Molecular Dynamics (MD) simulations were used to investigate the impact that \btm has on the structure of MHC class I for \db and \kb, in a peptide bound and a peptide unbound state. Molecular dynamics 
-simulations complement in vitro experimental studies, since they act as a bridge between theory and experiment by providing information about interactions which might support experimental data. In the present study the analysis of the MD simulations might indicate that, when \kb and \db are in the peptide bound state,  \btm binds to the heavy chain of both allotypes with the same affinity. While, in the peptide unbound state the complex of \btm with heavy chain for \kb appears to be more stable than that of \db.
+The function of major the histocompatibility complex (MHC) class I  molecules
+is to sample peptides derived from the cytosol of the cell and to present them
+to CD8+ cytotoxic T lymphocytes.  Interactions between the MHC class I heavy
+chain and beta2-microglobulin (\btm) play a critical role in the stability of
+MHC class I on the cell surface. In this study Molecular Dynamics (MD)
+simulations were used to investigate the impact that \btm has on the structure
+of MHC class I for \db and \kb, in a peptide bound and a peptide unbound state.
+Molecular dynamics simulations complement in vitro experimental studies, since
+they act as a bridge between theory and experiment by providing information
+about interactions which might support experimental data. In the present study
+the analysis of the MD simulations might indicate that, when \kb and \db are in
+the peptide bound state,  \btm binds to the heavy chain of both allotypes with
+the same affinity. While, in the peptide unbound state the complex of \btm with
+heavy chain for \kb appears to be more stable than that of \db.
+
     \end{abstract}
   \end{@twocolumnfalse}
   ]
@@ -62,54 +77,98 @@ simulations complement in vitro experimental studies, since they act as a bridge
 
 \section*{Introduction}
 
-MHC class I plays an essential role in the recognition of pathogen infected cells by presenting antigenic peptides on the cell surface to CD8+ T-cells. The MHC class I genes are located in chromosome 17 in mice.
-The different loci that make up the MHC class I, are called the H-2D, H-2K and H-2L and the alleles are  
-designated by a superscript letter (\db). MHC class I molecule is a highly polygenic protein, which consists 
-of two polypeptide chains~\cite{simone2012analysis}. One chain is the alpha  superdomain, also known as heavy chain, 
-and the other is \btm. The alpha chain is separated into 3 domains, the alpha 1 and alpha 
-2 domains which form the peptide binding domain. The alpha 3 domain has a transmembrane region that serves to anchor 
-the molecule to the cell surface~\cite{pedersen2011porcine}. 
+MHC class I plays an essential role in the recognition of pathogen infected
+cells by presenting antigenic peptides on the cell surface to CD8+ T-cells. The
+MHC class I genes are located in chromosome 17 in mice.  The different loci
+that make up the MHC class I, are called the H-2D, H-2K and H-2L and the
+alleles are  designated by a superscript letter (\db). MHC class I molecule is
+a highly polygenic protein, which consists of two polypeptide
+chains~\cite{simone2012analysis}. One chain is the alpha  superdomain, also
+known as heavy chain, and the other is \btm. The alpha chain is separated into
+3 domains, the alpha 1 and alpha 2 domains which form the peptide binding
+domain. The alpha 3 domain has a transmembrane region that serves to anchor the
+molecule to the cell surface~\cite{pedersen2011porcine}. 
 
-Folding of the MHC class I molecule and peptide loading occur in the endoplasmic reticulum (ER). Upon translocation 
-into the ER, \btm associates non-covalently with the heavy chain. After association with \btm the 
-alpha 1 and alpha 2 domains continue to remain in an unfolded state until a peptide is loaded into the binding domain. 
-Loading of a peptide into the binding domain takes place with the assistance of several proteins which make the 
-loading complex. Some of the proteins that mediate the intracellular assembly of MHC class I are the chaperones calnexin and 
-calreticulin, ERp57, tapasin and Bap31~\cite{zhang2006assembly}. Only peptides which are between 8 and 10 amino acids 
-long, and have proper anchor residues will bind to the binding domain. This event will then induce  the 
-alpha 1 and alpha 2 domains to fold~\cite{simone2012analysis}. The peptides which bind to MHC class I are produced in the 
-cytosol of the cell by the protesome, they are then transported into the ER by the Transporter associated with 
-Antigen Processing (TAP). After the peptide is incorporated the MHC class I molecule is released from the loading 
-complex, and is transported out of the ER and unto the cell surface~\cite{lundegaard2012predictions}.
+Folding of the MHC class I molecule and peptide loading occur in the
+endoplasmic reticulum (ER). Upon translocation into the ER, \btm associates
+non-covalently with the heavy chain. After association with \btm the alpha 1
+and alpha 2 domains continue to remain in an unfolded state until a peptide is
+loaded into the binding domain.  Loading of a peptide into the binding domain
+takes place with the assistance of several proteins which make the loading
+complex. Some of the proteins that mediate the intracellular assembly of MHC
+class I are the chaperones calnexin and calreticulin, ERp57, tapasin and
+Bap31~\cite{zhang2006assembly}. Only peptides which are between 8 and 10 amino
+acids long, and have proper anchor residues will bind to the binding domain.
+This event will then induce  the alpha 1 and alpha 2 domains to
+fold~\cite{simone2012analysis}. The peptides which bind to MHC class I are
+produced in the cytosol of the cell by the protesome, they are then transported
+into the ER by the Transporter associated with Antigen Processing (TAP). After
+the peptide is incorporated the MHC class I molecule is released from the
+loading complex, and is transported out of the ER and unto the cell
+surface~\cite{lundegaard2012predictions}.
 
 
-The interactions between \btm and MHC class I heavy chains stabilize and facilitate 
-peptide loading. \btm has been described as being responsible for promoting MHC class I interactions with  peptides in the ER.
-\btm does not associate directly with the peptide binding domain but, it has been thought capable of interacting in an indirect way with  it~\cite{smith1993alteration}.
+The interactions between \btm and MHC class I heavy chains stabilize and
+facilitate peptide loading. \btm has been described as being responsible for
+promoting MHC class I interactions with  peptides in the ER.  \btm does not
+associate directly with the peptide binding domain but, it has been thought
+capable of interacting in an indirect way with  it~\cite{smith1993alteration}.
 
-Even though the function of \btm in the complex of MHC class I has been studied extensively, it is still not clear through which 
-residues  \btm might be interacting with the heavy chain. It is also not clear which residues are to be attributed for the difference in the stability between \btm and the heavy chain when they are in the peptide bound or peptide unbound state. MHC class I complexes without peptide cannot be studied through an experimental approach, since they tend to not reach the cell surface unless they are bound to a peptide. Therefore they are studied 
-using MD simulations. In this work I analyzed eight MD simulation, using the molecular graphics software Visual Molecular Dynamics (VMD)~\cite{vmd96}, of the two allotypes, \db and \kb Table \ref{simulations}. 
+Even though the function of \btm in the complex of MHC class I has been studied
+extensively, it is still not clear through which residues  \btm might be
+interacting with the heavy chain. It is also not clear which residues are to be
+attributed for the difference in the stability between \btm and the heavy chain
+when they are in the peptide bound or peptide unbound state. MHC class I
+complexes without peptide cannot be studied through an experimental approach,
+since they tend to not reach the cell surface unless they are bound to a
+peptide. Therefore they are studied using MD simulations. In this work I
+analyzed eight MD simulation, using the molecular graphics software Visual
+Molecular Dynamics (VMD)~\cite{vmd96}, of the two allotypes, \db and \kb Table
+\ref{simulations}. 
 
-Pairs of residues, located between \btm and the peptide binding domain, which were observed to be making hydrogen bonds for an extended amount of time, were selected and noted into a residue pair file (Figure \ref{interface}). The residue pair file was used with the code in Listing \ref{Tcl.script}.  Then the  file generated from the previous step was then used with the code in Listing \ref{generategnuplot.sh} to generate distance files. These distance files were then fed into the \texttt{gnuplot} executable to produce graphs Figure \ref{graphdemonstration}. 
+Pairs of residues, located between \btm and the peptide binding domain, which
+were observed to be making hydrogen bonds for an extended amount of time, were
+selected and noted into a residue pair file (Figure \ref{interface}). The
+residue pair file was used with the code in Listing \ref{Tcl.script}.  Then the
+file generated from the previous step was then used with the code in Listing
+\ref{generategnuplot.sh} to generate distance files. These distance files were
+then fed into the \texttt{gnuplot} executable to produce graphs Figure
+\ref{graphdemonstration}. 
 
-By using these graphs I determined several interactions, between the heavy chain and \btm of \db and \kb, that are maintained in the condition with peptide and  without peptide. The number of interacting partners stayed constant for \kb under both condition. This was not the case for \db were the number of interacting partners decreased in the condition without peptide (Table \ref{KBDBinteractions}). This might indicate that \db is less stable than \kb in the condition without peptide and can be correlated with experimental data which shows that \db is less stable than \kb~\cite{Shields1999561}.
+By using these graphs I determined several interactions, between the heavy
+chain and \btm of \db and \kb, that are maintained in the condition with
+peptide and  without peptide. The number of interacting partners stayed
+constant for \kb under both condition. This was not the case for \db were the
+number of interacting partners decreased in the condition without peptide
+(Table \ref{KBDBinteractions}). This might indicate that \db is less stable
+than \kb in the condition without peptide and can be correlated with
+experimental data which shows that \db is less stable than
+\kb~\cite{Shields1999561}.
 
 \section*{Material and Methods}
 
 \subsection*{Molecular dynamic simulations}
 
-Eight free energy MD simulations were  performed by my supervisor using the sander module of Amber 9.0~\cite{case2005amber} and the parm03 forcefield.
-These simulation were executed on the  MHC-peptide complexes corresponding to  \db and  \kb. 
-The crystal structures of \db and  \kb complexes are found in the Protein Data Bank (PDB) under the label of 1S7V and  1S7R respectively. 
-The simulations for both allotypes were performed using two different conditions. 
-In one condition the complex was bound to the peptide, and in the other  the complex is in the absence of the peptide. 
-Each of these two conditions were simulated using two different initial velocities $v0$ and $v1$ respectively. The two velocities were XXX and YYY. 
-All the simulations are \SI{40}{\nano\second} long and were performed  at \SI{300}{\kelvin}. These eight simulation are listed in Table \ref{simulations}.
+Eight free energy MD simulations were  performed by my supervisor using the
+sander module of Amber 9.0~\cite{case2005amber} and the parm03 forcefield.
+These simulation were executed on the  MHC-peptide complexes corresponding to
+\db and  \kb.  The crystal structures of \db and  \kb complexes are found in
+the Protein Data Bank (PDB) under the label of 1S7V and  1S7R respectively.
+The simulations for both allotypes were performed using two different
+conditions.  In one condition the complex was bound to the peptide, and in the
+other  the complex is in the absence of the peptide.  Each of these two
+conditions were simulated using two different initial velocities $v0$ and $v1$
+respectively. The two velocities were XXX and YYY.  All the simulations are
+\SI{40}{\nano\second} long and were performed  at \SI{300}{\kelvin}. These
+eight simulation are listed in Table \ref{simulations}.
 
 
 \begin{table}[H]
-\caption{\textbf{Overview of the eight simulation conditions used for analysis of \btm affinity to the peptide binding domain.} Each of the simulations is displaying either the allotype \db or \kb, it is involved in the complex with peptide (w) or without peptide (wo) and, has the initial velocities of $v0$ or $v1$.}
+\caption{\textbf{Overview of the eight simulation conditions used for analysis
+of \btm affinity to the peptide binding domain.} Each of the simulations is
+displaying either the allotype \db or \kb, it is involved in the complex with
+peptide (w) or without peptide (wo) and, has the initial velocities of $v0$ or
+$v1$.}
 \label{simulations}
 \centering 
 \resizebox{0.4\textwidth}{!} {
@@ -138,11 +197,15 @@ MHC class I allotype& w/wo peptide&initial velocity\\ \hline
 
 \subsection*{MD simulation analysis}
 
-The data acquisition, evaluation, and visualization was automated by two scripts. They will be explained in the following  sections.
+The data acquisition, evaluation, and visualization was automated by two
+scripts. They will be explained in the following  sections.
 
 \subsubsection*{Data Acquisition}
 
-The data acquisition from  the simulation results was performed using VMD and its Tcl scripting interface. The process of generating the distance between two given residues per frame was automated using the code in Listing \ref{Tcl.script}.
+The data acquisition from  the simulation results was performed using VMD and
+its Tcl scripting interface. The process of generating the distance between two
+given residues per frame was automated using the code in Listing
+\ref{Tcl.script}.
 
 \begin{listing}
 \begin{minted}[linenos,fontsize=\scriptsize,numbersep=2pt,frame=lines,framesep=2mm]{tcl}
@@ -187,7 +250,13 @@ proc t_loadlist {filename} {
 \caption{\textbf{Tcl script used to generate the data for analysis.}}\label{Tcl.script}
 \end{listing}
 
-The input to the function \texttt{t\_loadlist} is a plain text file where each line specifies a residue pair. Each line contains four values separated by white spaces. The first and the second value specify the residue number and the atom number of the first residue, and the third and the fourth value specify the  residue number and the atom number of the second residue. The residue numbers and the atom numbers are retrieved from the VMD interface. An example for a residue pair file is given in Listing \ref{resatexample}.
+The input to the function \texttt{t\_loadlist} is a plain text file where each
+line specifies a residue pair. Each line contains four values separated by
+white spaces. The first and the second value specify the residue number and the
+atom number of the first residue, and the third and the fourth value specify
+the  residue number and the atom number of the second residue. The residue
+numbers and the atom numbers are retrieved from the VMD interface. An example
+for a residue pair file is given in Listing \ref{resatexample}.
 
 \begin{listing}
 \begin{verbatim}
@@ -198,21 +267,46 @@ The input to the function \texttt{t\_loadlist} is a plain text file where each l
 \caption{\textbf{Example of residue pair file.} Each line represents one pair.}\label{resatexample}
 \end{listing}
 
-In the beginning (line 4) all previously labeled bonds are deleted to avoid interferance of previous runs of the script.
-The main while loop reads the residue pair file line by line until the end of the file is reached (line 5). The line is parsed into the variables \texttt{res1}, \texttt{at1}, \texttt{res2}, and \texttt{at2} representing residue number and the atom number of each element of the pair, respectively (line 6).
-In the following two lines \texttt{atomselect} evaluates a query which selects the right atom in the structure for the given residue number and the atom number. It returns a function which can retrieve properties of the atom selection, such as \texttt{index} and \texttt{resname} in lines 9, 14, 15, and 26.
+In the beginning (line 4) all previously labeled bonds are deleted to avoid
+interferance of previous runs of the script.  The main while loop reads the
+residue pair file line by line until the end of the file is reached (line 5).
+The line is parsed into the variables \texttt{res1}, \texttt{at1},
+\texttt{res2}, and \texttt{at2} representing residue number and the atom number
+of each element of the pair, respectively (line 6).  In the following two lines
+\texttt{atomselect} evaluates a query which selects the right atom in the
+structure for the given residue number and the atom number. It returns a
+function which can retrieve properties of the atom selection, such as
+\texttt{index} and \texttt{resname} in lines 9, 14, 15, and 26.
 
-The lines from 20-25 check if the current residue pair has already been processed in an earlier iteration. If yes, then the current residue pair is skipped. If not, then the current residue pair is added to the list of visited pairs and processing of the current pair continues.  
+The lines from 20-25 check if the current residue pair has already been
+processed in an earlier iteration. If yes, then the current residue pair is
+skipped. If not, then the current residue pair is added to the list of visited
+pairs and processing of the current pair continues.  
 
-Lines 27 and 28 set the filename of the output data. The filename includes the residue name, the residue number and the atom number of each element of the current pair. Given the first line of the residue pair file given in Listing \ref{resatexample} the output filename would be \texttt{ARG\_14\_NH2\_HIE\_310\_NE2.dat}.
+Lines 27 and 28 set the filename of the output data. The filename includes the
+residue name, the residue number and the atom number of each element of the
+current pair. Given the first line of the residue pair file given in Listing
+\ref{resatexample} the output filename would be
+\texttt{ARG\_14\_NH2\_HIE\_310\_NE2.dat}.
 
-The last step in lines 29 to 34 is to utilize the VMD \texttt{label} function. It adds a bond between the two selected atoms and outputs the distances between them, over the total number of simulation frames, into a location specified by the generated filename. The created file is a plain text file consisting of two columns, giving the frame number and the distance between the two selected atoms for that frame number, respectively. These distance files are the imput to the script which will be described next.
+The last step in lines 29 to 34 is to utilize the VMD \texttt{label} function.
+It adds a bond between the two selected atoms and outputs the distances between
+them, over the total number of simulation frames, into a location specified by
+the generated filename. The created file is a plain text file consisting of two
+columns, giving the frame number and the distance between the two selected
+atoms for that frame number, respectively. These distance files are the imput
+to the script which will be described next.
 
-The script is executed for all the eight simulation conditions displayed in Table \ref{simulations}. Since each run of the script generates multiple files, they are organized into directories. Each simulation condition corresponds to one directory.
+The script is executed for all the eight simulation conditions displayed in
+Table \ref{simulations}. Since each run of the script generates multiple files,
+they are organized into directories. Each simulation condition corresponds to
+one directory.
 
 \subsubsection*{Data Evaluation}
 
-The script in Listing \ref{generategnuplot.sh} processes the generated distance files and turns them into gnuplot instructions which are used to vizualise the results.
+The script in Listing \ref{generategnuplot.sh} processes the generated distance
+files and turns them into gnuplot instructions which are used to vizualise the
+results.
 
 \begin{listing}
 \begin{minted}[linenos,fontsize=\scriptsize,numbersep=2pt,frame=lines,framesep=2mm]{sh}
@@ -254,42 +348,106 @@ done
 \caption{\textbf{Shell script used to generate \texttt{gnuplot} instructions.}}\label{generategnuplot.sh}
 \end{listing}
 
-The script takes three arguments. The first two arguments specify the two directories which contain the generated distance files of two selected conditions that are to be compared, respectively. The third argument specifies the output directory for the comparison results. Line 10 instructs \texttt{gnuplot} to generate bitmap images in Portable Network Graphics (PNG) format. The instructions in lines 12-15 instruct \texttt{gnuplot} to set the range in the y axis and in the x axis  and the labels for the x and y axis of the plot.
-For each file ending in \texttt{.dat} in the first directory, the script checks if it also exists int he second directory (line 20). If not, the file is skipped. If yes, processing continues with setting the output graph tittle to the filename (line 23). Line 24 counts how many lines of the file in the first directory have a value which is less than or equal to four in the second column. Line 25 gets the total number of lines of the same file. The percentage of lines fullfiling the condition in line 24 is calculated in line 26. The subsequent three lines excute the same operations for the file in the second directory. The output filename is generated fromt the current filename in line 30. The last two lines of the loop body instruct \texttt{gnuplot} to plot the graph and annotate it with the two prior calculated percentages.  
+The script takes three arguments. The first two arguments specify the two
+directories which contain the generated distance files of two selected
+conditions that are to be compared, respectively. The third argument specifies
+the output directory for the comparison results. Line 10 instructs
+\texttt{gnuplot} to generate bitmap images in Portable Network Graphics (PNG)
+format. The instructions in lines 12-15 instruct \texttt{gnuplot} to set the
+range in the y axis and in the x axis  and the labels for the x and y axis of
+the plot.  For each file ending in \texttt{.dat} in the first directory, the
+script checks if it also exists int he second directory (line 20). If not, the
+file is skipped. If yes, processing continues with setting the output graph
+tittle to the filename (line 23). Line 24 counts how many lines of the file in
+the first directory have a value which is less than or equal to four in the
+second column. Line 25 gets the total number of lines of the same file. The
+percentage of lines fullfiling the condition in line 24 is calculated in line
+26. The subsequent three lines excute the same operations for the file in the
+second directory. The output filename is generated fromt the current filename
+in line 30. The last two lines of the loop body instruct \texttt{gnuplot} to
+plot the graph and annotate it with the two prior calculated percentages.  
 
 \subsubsection*{Data Visualization}
 
-The \texttt{gnuplot} instructions generated by the last script can then be fed into the \texttt{gnuplot} executable which in turn will generate the final images showing the graphs with percentages. An example visualizing the distances between the residues given in the first line of the residue pair file in Listing \ref{resatexample} can be seen in Figure \ref{graphdemonstration}.
+The \texttt{gnuplot} instructions generated by the last script can then be fed
+into the \texttt{gnuplot} executable which in turn will generate the final
+images showing the graphs with percentages. An example visualizing the
+distances between the residues given in the first line of the residue pair file
+in Listing \ref{resatexample} can be seen in Figure \ref{graphdemonstration}.
 
 
 \section*{Results}
 
-All the eight simulations in Table \ref{simulations} were loaded into VMD. The interface between \btm and the peptide binding domain was analysed in each simulation. The analysis consisted of observing pairs of residues, between the highlightes areas (Figure \ref{interface}), and selecting those which were candidates to form hydrogen bonds. 
-The selected pairs were recorded in a residue pair file in the format described in the material and methods section. Then using the 
-Tcl scripting interface, the residue pair file was fed into the code in Listing \ref{Tcl.script} which generated distance files. Every time, two distance files with different conditions (Table \ref{simulations}) were processed by the code in Listing \ref{generategnuplot.sh}. Where I determined the percentage of interactions between the two residues which were less than or equal to four \angstr through all the frames of the simulation. The output of the last script  was visually inspected as a graph, generated with \texttt{gnuplot} (Figure \ref{graphdemonstration}).
+All the eight simulations in Table \ref{simulations} were loaded into VMD. The
+interface between \btm and the peptide binding domain was analysed in each
+simulation. The analysis consisted of observing pairs of residues, between the
+highlightes areas (Figure \ref{interface}), and selecting those which were
+candidates to form hydrogen bonds.  The selected pairs were recorded in a
+residue pair file in the format described in the material and methods section.
+Then using the Tcl scripting interface, the residue pair file was fed into the
+code in Listing \ref{Tcl.script} which generated distance files. Every time,
+two distance files with different conditions (Table \ref{simulations}) were
+processed by the code in Listing \ref{generategnuplot.sh}. Where I determined
+the percentage of interactions between the two residues which were less than or
+equal to four \angstr through all the frames of the simulation. The output of
+the last script  was visually inspected as a graph, generated with
+\texttt{gnuplot} (Figure \ref{graphdemonstration}).
 
 \begin{figure}
 \includegraphics[width=0.4\textwidth]{interfaceb2mhc.png}
-\caption{\textbf{MHC class I \kb in the condition without peptide.} Side view of the interactions between \btm and the peptide binding domain of \kb obtained during the MD simulations. The section from which residues were selected for analysis in \btm appears in blue. The section from which residues were selected for analysis in the peptide binding domain appears in red.}
+\caption{\textbf{MHC class I \kb in the condition without peptide.} Side view
+of the interactions between \btm and the peptide binding domain of \kb obtained
+during the MD simulations. The section from which residues were selected for
+analysis in \btm appears in blue. The section from which residues were selected
+for analysis in the peptide binding domain appears in red.}
 \label{interface}
 \end{figure}
 
-The graph displays the distance that a residue pair maintained at a particular frame of the simulation. All of the simulations used in the analysis were \SI{10}{\nano\second} long, which translate into 10000 frames (Figure \ref{graphdemonstration}). The distance between the residue pair, in each condition, fluctuated throughout the simulation. In this case, the interactions between the residues of the pair fluctuated between 3.5  and  17 \angstr for the chosen condition of with peptide (w) and initial veolocity of v0. The pair was also analysed in the conditions without (wo) peptide and an initial velocity of v0. Under those condition the interactions   fluctuated between 3.5  and  7 \angstr.
-The number displayed in the top right corner of the graph displays the percentage of frames that two residues maintained a distance  below the established rage of four \angstr throughout the simulation. 
+The graph displays the distance that a residue pair maintained at a particular
+frame of the simulation. All of the simulations used in the analysis were
+\SI{10}{\nano\second} long, which translate into 10000 frames (Figure
+\ref{graphdemonstration}). The distance between the residue pair, in each
+condition, fluctuated throughout the simulation. In this case, the interactions
+between the residues of the pair fluctuated between 3.5  and  17 \angstr for
+the chosen condition of with peptide (w) and initial veolocity of v0. The pair
+was also analysed in the conditions without (wo) peptide and an initial
+velocity of v0. Under those condition the interactions   fluctuated between 3.5
+and  7 \angstr.  The number displayed in the top right corner of the graph
+displays the percentage of frames that two residues maintained a distance
+below the established rage of four \angstr throughout the simulation. 
 
 \begin{figure*}
 \begin{center}
 \includegraphics[scale=0.4]{ARG_14_NH2_HIE_310_NE2.png}
-\caption{\textbf{Example of a graph generated by \texttt{gnuplot} after processing the first line in the residue pair file (Listing \ref{resatexample}) with the two scripts (Listing \ref{Tcl.script} and \ref{generategnuplot.sh}).} The distance between the two interacting atoms for each of the two residue pairs represented in every frame of the simulation as $\plus$ or a $\times$. One pair was analysed in the conditions with peptide and initial velocity of v0. The other pair was analysed in the conditions without peptide and initial velocity of v0. The percentage calculated in Listing \ref{generategnuplot.sh} is displayed in the top right corner and the name of the analysed pair can be seen on the top of the graph. The blue line indicates the 4 \angstr cutoff value.}
+\caption{\textbf{Example of a graph generated by \texttt{gnuplot} after
+processing the first line in the residue pair file (Listing \ref{resatexample})
+with the two scripts (Listing \ref{Tcl.script} and \ref{generategnuplot.sh}).}
+The distance between the two interacting atoms for each of the two residue
+pairs represented in every frame of the simulation as $\plus$ or a $\times$.
+One pair was analysed in the conditions with peptide and initial velocity of
+v0. The other pair was analysed in the conditions without peptide and initial
+velocity of v0. The percentage calculated in Listing \ref{generategnuplot.sh}
+is displayed in the top right corner and the name of the analysed pair can be
+seen on the top of the graph. The blue line indicates the 4 \angstr cutoff
+value.}
 \label{graphdemonstration}
 \end{center}
 \end{figure*}
 
-Graphs in which a residue pair scored at least 40\%, in any of the two conditions used to analyse it,  were considered significant. The information about the percentage was read out from each graph and recorded (Table \ref{KBinteractions} and Table \ref{DBinteractions}). Only the results from the graphs with the condition of initial velocity v0 will be dealt with in the rest of the paper.
+Graphs in which a residue pair scored at least 40\%, in any of the two
+conditions used to analyse it,  were considered significant. The information
+about the percentage was read out from each graph and recorded (Table
+\ref{KBinteractions} and Table \ref{DBinteractions}). Only the results from the
+graphs with the condition of initial velocity v0 will be dealt with in the rest
+of the paper.
 
 
 \begin{table}[H]
-\caption{\textbf{The interacting residues used for the analysis of \kb and the percentage of their interactions below four \angstr. } The percentage of intractions below four \angstr between the residues selected in \btm and the peptide binding domain of \kb in the conditions of with peptide (w) and without peptide (wo) is listed.}
+\caption{\textbf{The interacting residues used for the analysis of \kb and the
+percentage of their interactions below four \angstr. } The percentage of
+intractions below four \angstr between the residues selected in \btm and the
+peptide binding domain of \kb in the conditions of with peptide (w) and without
+peptide (wo) is listed.}
 \label{KBinteractions}
 \begin{tabularx}{\linewidth}{|X|X|X|X|}  \hline
 Residue (peptide binding domain) &Residue (\btm)&\kbw [\%]&\kbwo [\%]\\ \hline
@@ -303,18 +461,43 @@ Residue (peptide binding domain) &Residue (\btm)&\kbw [\%]&\kbwo [\%]\\ \hline
 \end{tabularx}
 \end{table}
 
-In this analysis only seven residue pair interactions, above the 40\% criteria, were found in \kb for the conditions of with peptide  and without peptide. Most of the residue pair interactions maintain the same percentage, in  the conditions with and without peptide, in  \kb. An exception is the interaction between  residue 122 in the peptide binding complex with residue 60 in \btm which scored 50\% and 40\% of in the conditions with and without peptide respectively. Other two exceptions correspond to the interactions between the residue 92  in the peptide binding complex with residue 85 in \btm and between the residue 48 in the peptide binding complex with residue 52 in \btm (Table \ref{KBinteractions}). In general, the percentage of times a pair maintained an interactions below four \angstr is less in the case of \kb without peptide than in the case of \kb with peptide.  
+In this analysis only seven residue pair interactions, above the 40\% criteria,
+were found in \kb for the conditions of with peptide  and without peptide. Most
+of the residue pair interactions maintain the same percentage, in  the
+conditions with and without peptide, in  \kb. An exception is the interaction
+between  residue 122 in the peptide binding complex with residue 60 in \btm
+which scored 50\% and 40\% of in the conditions with and without peptide
+respectively. Other two exceptions correspond to the interactions between the
+residue 92  in the peptide binding complex with residue 85 in \btm and between
+the residue 48 in the peptide binding complex with residue 52 in \btm (Table
+\ref{KBinteractions}). In general, the percentage of times a pair maintained an
+interactions below four \angstr is less in the case of \kb without peptide than
+in the case of \kb with peptide.  
 
 
 
 
-In the case of \db nine residue pair interactions, above the 40\% criteria, were found for the conditions of with peptide and without peptide (Table \ref{DBinteractions}). Most of the residue pairs in \db have a very large difference between the percentage of frames a pair maintained an interaction under four \angstr,  in the conditions with peptide and  without peptide.    
-The only two exceptions correspond to the residues 27 in \btm with 63 in the peptide binding domain and 27 in \btm with 55 in the peptide binding domain. The percentage of frames a pair maintained an interaction below four \angstr is less in the case of \db without peptide than in the case of \db with peptide. The exceptions are the residue pairs 94 with 31 and 122 with 60 which have, in the condition without peptide, more interactions above four \angstr than in the condition with peptide.  
+In the case of \db nine residue pair interactions, above the 40\% criteria,
+were found for the conditions of with peptide and without peptide (Table
+\ref{DBinteractions}). Most of the residue pairs in \db have a very large
+difference between the percentage of frames a pair maintained an interaction
+under four \angstr,  in the conditions with peptide and  without peptide.
+The only two exceptions correspond to the residues 27 in \btm with 63 in the
+peptide binding domain and 27 in \btm with 55 in the peptide binding domain.
+The percentage of frames a pair maintained an interaction below four \angstr is
+less in the case of \db without peptide than in the case of \db with peptide.
+The exceptions are the residue pairs 94 with 31 and 122 with 60 which have, in
+the condition without peptide, more interactions above four \angstr than in the
+condition with peptide.  
  
  
  
 \begin{table}[H]
-\caption{\textbf{The interacting residues used for the analysis of \db and the percentage of their interactions below four \angstr. } The percentage of intractions below four \angstr between the residues selected in \btm and the peptide binding domain of \db in the conditions of with peptide (w) and without peptide (wo) is listed.}
+\caption{\textbf{The interacting residues used for the analysis of \db and the
+	percentage of their interactions below four \angstr. } The percentage
+	of intractions below four \angstr between the residues selected in \btm
+	and the peptide binding domain of \db in the conditions of with peptide
+(w) and without peptide (wo) is listed.}
 \label{DBinteractions}
 \begin{tabularx}{\linewidth}{|X|X|X|X|}  \hline
 Residue (peptide binding domain)&Residue (\btm)&\dbw [\%]&\dbwo [\%]\\ \hline
@@ -331,13 +514,26 @@ Residue (peptide binding domain)&Residue (\btm)&\dbw [\%]&\dbwo [\%]\\ \hline
 \end{table}
 
 
-All the residue pairs that were found interacting in either \db or \kb were merged together for a better comparison (Table \ref{KBDBinteractions}). From all the twelve residue pairs, \kb in the condition with peptide, present only six residue pairs which meet the percentage condition explained above. \kb in the condition without peptide also presents only six residue pairs which meet the percentage condition. In contrast, \db in the condition with peptide has eight residue pairs which meet the percentage condition while \db in the condition without peptide only has five residue pairs which meet the percentage condition. 
+All the residue pairs that were found interacting in either \db or \kb were
+merged together for a better comparison (Table \ref{KBDBinteractions}). From
+all the twelve residue pairs, \kb in the condition with peptide, present only
+six residue pairs which meet the percentage condition explained above. \kb in
+the condition without peptide also presents only six residue pairs which meet
+the percentage condition. In contrast, \db in the condition with peptide has
+eight residue pairs which meet the percentage condition while \db in the
+condition without peptide only has five residue pairs which meet the percentage
+condition. 
 
 
 
 
 \begin{table*}
-\caption{\textbf{ Compilation of the the interacting residues used for the analysis of \kb and \db, and the percentage of interactions bellow below four \angstr, of each analysed condition.} The residues interacting coming from the peptide binding domain, the residues interacting coming from \btm and the percentage of their interaction which is below four \angstr is analysed in \db and \kb for the condition of with peptide and without peptide}
+\caption{\textbf{ Compilation of the the interacting residues used for the
+	analysis of \kb and \db, and the percentage of interactions bellow
+below four \angstr, of each analysed condition.} The residues interacting
+coming from the peptide binding domain, the residues interacting coming from
+\btm and the percentage of their interaction which is below four \angstr is
+analysed in \db and \kb for the condition of with peptide and without peptide}
 \label{KBDBinteractions}
 \begin{tabularx}{\linewidth}{|X|X|X|X|X|X|}  \hline
 Residue (peptide binding domain)&Residue (\btm)&\kbw [\%]&\kbwo [\%]&\dbw [\%]&\dbwo [\%]\\ \hline
@@ -365,41 +561,122 @@ Residue (peptide binding domain)&Residue (\btm)&\kbw [\%]&\kbwo [\%]&\dbw [\%]&\
 
 
 \section*{Discussion}
-The interactions between the heavy chain, the peptide and \btm have been described  as being interdependent, this would mean that \btm can interfere with binding of the peptide into the peptide binding domain. 
-\btm has been assigned a dual role in the context of antigen presentation by MHC class I~\cite{achour2006structural}. Its roles are to 1) be part of the MHC class I complex and 2) promote the folding of the MHC class I heavy chain when it encounters a peptide.
+
+The interactions between the heavy chain, the peptide and \btm have been
+described  as being interdependent, this would mean that \btm can interfere
+with binding of the peptide into the peptide binding domain.  \btm has been
+assigned a dual role in the context of antigen presentation by MHC class
+I~\cite{achour2006structural}. Its roles are to 1) be part of the MHC class I
+complex and 2) promote the folding of the MHC class I heavy chain when it
+encounters a peptide.
 
 
-This study uses an in silico approach to determine pairs of interacting residues which might be the key to the stability of \btm to the heavy chain. 
+This study uses an in silico approach to determine pairs of interacting
+residues which might be the key to the stability of \btm to the heavy chain. 
 
- VMD was used to visually inspect the simulations of MHC class I \db and \kb molecules. Molecular dynamics simulation studies are  used to investigate biological systems under conditions which cannot be performed in a laboratory and to  measure parameters which are hard to calculate for an experimenter. In simulation studies the computer models a physical system, it used several calulations based on a mathematical model to produce results which are interpreted in terms of physical properties~\cite{allen2004introduction}. Molecular dynamic simulations can help to test a theory or support an experimental finding.   
+
+VMD was used to visually inspect the simulations of MHC class I \db and \kb
+molecules. Molecular dynamics simulation studies are  used to investigate
+biological systems under conditions which cannot be performed in a laboratory
+and to  measure parameters which are hard to calculate for an experimenter. In
+simulation studies the computer models a physical system, it used several
+calulations based on a mathematical model to produce results which are
+interpreted in terms of physical properties~\cite{allen2004introduction}.
+Molecular dynamic simulations can help to test a theory or support an
+experimental finding.   
 
   
-Everything that can be done in VMD using the VMD graphical interface can also be done throught the TCL interface. The scripts found in the material and methods section facilitate the data analysis process and eleminate the manual work of generating graphs. They can be used to compare any molecule loaded into VMD for different experimental condition.
+Everything that can be done in VMD using the VMD graphical interface can also
+be done throught the TCL interface. The scripts found in the material and
+methods section facilitate the data analysis process and eleminate the manual
+work of generating graphs. They can be used to compare any molecule loaded into
+VMD for different experimental condition.
 
 
 
 
-The aim of the present simulation study was to compare the interface (Figure \ref{interface}) between the peptide binding domain and \btm of the peptide bound and peptide unbound form of the mouse MHC class I \kb and \db on the nanosecond time scale and find possible interacting partners which can account for the stability between \btm and the peptide binding domain. Four \angstr was chosen as the maximum distance that two interacting residues could have, at any given frame in the simulation, for the residues to be considered as forming hydrogen bonds \cite{McDonald1994777}. The greater the total amount of times a residue pair is forming hydrogen bonds, the larger the percentage will be(Figure \ref{graphdemonstration}). An interaction  between a residue pair was considered to be stable hydrogen bond interaction if the total amount of hydrogen bond interactions over all the frames scored over 40 \%. 
+The aim of the present simulation study was to compare the interface (Figure
+\ref{interface}) between the peptide binding domain and \btm of the peptide
+bound and peptide unbound form of the mouse MHC class I \kb and \db on the
+nanosecond time scale and find possible interacting partners which can account
+for the stability between \btm and the peptide binding domain. Four \angstr was
+chosen as the maximum distance that two interacting residues could have, at any
+given frame in the simulation, for the residues to be considered as forming
+hydrogen bonds \cite{McDonald1994777}. The greater the total amount of times a
+residue pair is forming hydrogen bonds, the larger the percentage will
+be(Figure \ref{graphdemonstration}). An interaction  between a residue pair was
+considered to be stable hydrogen bond interaction if the total amount of
+hydrogen bond interactions over all the frames scored over 40 \%. 
 
-Many biochemical studies have been made to probe the afinity of \btm to the peptide binding domain by exchanging mouse \btm for human \btm in the complex with MHC class I. These studies have concluded that mouse \btm has a lower affinity to the peptide binding domain than human \btm does~\cite{Shields1999561}. It has been suggested that the cause for the lower affinity between \btm and the peptide binding complex might be the greater flexibility arround the residues 49-57 on mouse \btm~\cite{Shields1999561}. This might explain some of the data shown in this study, when I compared residue pairs interacting in H2-\kb and h2-\db ( Table \ref{KBDBinteractions}. The residue pair composed of residue 48, on the peptide binding domain, and residue 52 on \btm shows a clear difference between their interaction in \kb and \db. In \kb in the condition with peptide, the residue pair scored 87 \% while in the situation of \kb without peptide it scored 69 \%. Therefore it was determined that this hydrogen bond interaction is very stable since it is maintained in both conditions.
+Many biochemical studies have been made to probe the afinity of \btm to the
+peptide binding domain by exchanging mouse \btm for human \btm in the complex
+with MHC class I. These studies have concluded that mouse \btm has a lower
+affinity to the peptide binding domain than human \btm
+does~\cite{Shields1999561}. It has been suggested that the cause for the lower
+affinity between \btm and the peptide binding complex might be the greater
+flexibility arround the residues 49-57 on mouse \btm~\cite{Shields1999561}.
+This might explain some of the data shown in this study, when I compared
+residue pairs interacting in H2-\kb and h2-\db ( Table \ref{KBDBinteractions}.
+The residue pair composed of residue 48, on the peptide binding domain, and
+residue 52 on \btm shows a clear difference between their interaction in \kb
+and \db. In \kb in the condition with peptide, the residue pair scored 87 \%
+while in the situation of \kb without peptide it scored 69 \%. Therefore it was
+determined that this hydrogen bond interaction is very stable since it is
+maintained in both conditions.
 
-This is very different in the case of \db, which scored 1\% and 5\% in the condition with and without peptide respectively. Another interaction around the area suggested, is that between  residue 27, on the peptide binding domain, with residue 53, on \btm. This interaction  is present in the condition of \db with peptide but it is lost in the condition of \db without peptide. For \db this hydrogen bond interaction was deemed unstable since it was lost in the absence of the peptide.  
+This is very different in the case of \db, which scored 1\% and 5\% in the
+condition with and without peptide respectively. Another interaction around the
+area suggested, is that between  residue 27, on the peptide binding domain,
+with residue 53, on \btm. This interaction  is present in the condition of \db
+with peptide but it is lost in the condition of \db without peptide. For \db
+this hydrogen bond interaction was deemed unstable since it was lost in the
+absence of the peptide.  
 
-Another interresting interaction is that of residue 60 in \btm with residues 122 and 96 on the peptide binding domain. Residue 60 is known to be conserved throughout 104 known \btm
-sequences. It was found that two hydrogen bond interactions are formed between these residues~\cite{achour2006structural}. This hydrogen bond interactions were also found during my analysis (Table \ref{KBDBinteractions}). 
+Another interresting interaction is that of residue 60 in \btm with residues
+122 and 96 on the peptide binding domain. Residue 60 is known to be conserved
+throughout 104 known \btm sequences. It was found that two hydrogen bond
+interactions are formed between these residues~\cite{achour2006structural}.
+This hydrogen bond interactions were also found during my analysis (Table
+\ref{KBDBinteractions}). 
 
-\kb appears to be more stable than \db in the case of the residue pair of 122 with 60 and 96 with 60. The  interactions in \kb with and without peptide for both residue pairs meets the requiered 40\% hydrogen bond condition for it to be considered stable. This is not the case for \db who only has the requiered 40 \% hydrogen bond interaction during the simulation without peptide.
+\kb appears to be more stable than \db in the case of the residue pair of 122
+with 60 and 96 with 60. The  interactions in \kb with and without peptide for
+both residue pairs meets the requiered 40\% hydrogen bond condition for it to
+be considered stable. This is not the case for \db who only has the requiered
+40 \% hydrogen bond interaction during the simulation without peptide.
 
 
-The observed lack of a durable hydrogen bond interaction, in the case of \db, between two sets residues, 122-60 and 96-60, which are thought to be important for the stability of mouse \btm with the peptide domain might support the idea that \kb is more stable then \db. This observation however is only present in the analysed simulation, for more realistic approximation other simulation will need to be analysed.  
+The observed lack of a durable hydrogen bond interaction, in the case of \db,
+between two sets residues, 122-60 and 96-60, which are thought to be important
+for the stability of mouse \btm with the peptide domain might support the idea
+that \kb is more stable then \db. This observation however is only present in
+the analysed simulation, for more realistic approximation other simulation will
+need to be analysed.  
 
 \subsection*{Future Work}
 
-The only part of the processes described in the material and methods section which currently has to be done manually and is not yet automated is finding suitable residue pairs and writting them into the residue pair file. To find suitable pairs the user would use the vmd graphical interface to look for residues that appear to be interacting. Upon finding a suitable cadidate pair the user will select both atoms and watch the animation sequence, monitoring the change in the distance between them. If the distance seems to be small for a large portion of frames then the user will use the vmd menu to figure out the values that have to be added to the residue pair file.
+The only part of the processes described in the material and methods section
+which currently has to be done manually and is not yet automated is finding
+suitable residue pairs and writting them into the residue pair file. To find
+suitable pairs the user would use the vmd graphical interface to look for
+residues that appear to be interacting. Upon finding a suitable cadidate pair
+the user will select both atoms and watch the animation sequence, monitoring
+the change in the distance between them. If the distance seems to be small for
+a large portion of frames then the user will use the vmd menu to figure out the
+values that have to be added to the residue pair file.
 
-This becomes a very extensive check to do manually when you have big molecule with large areas to analyse that need to be analysed. Also a molecule is analysed in different conditions, and for every condition the process has to be repeated from the start. 
+This becomes a very extensive check to do manually when you have big molecule
+with large areas to analyse that need to be analysed. Also a molecule is
+analysed in different conditions, and for every condition the process has to be
+repeated from the start. 
 
-A future goal is to impliment an algorithm which will automate this process. Therefore the only manual task left will be the analysys of the resuts. The algorithm will only evaluate pairs of atoms which can form hydrogen bonds with each other on the basis of their chemical nature. A pair will be considered for evaluation if the euclidean distance between them over all the frames is short and at the same time the shortest path connecting them through the backbone of the molecule. 
+A future goal is to impliment an algorithm which will automate this process.
+Therefore the only manual task left will be the analysys of the resuts. The
+algorithm will only evaluate pairs of atoms which can form hydrogen bonds with
+each other on the basis of their chemical nature. A pair will be considered for
+evaluation if the euclidean distance between them over all the frames is short
+and at the same time the shortest path connecting them through the backbone of
+the molecule. 
 
 
 
